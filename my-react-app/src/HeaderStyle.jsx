@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "./UserContext";
 export default function header(){
+  const{User}=useContext(UserContext);
     return(
         <header className="flex justify-between ">
         <div className="flex items-center gap-1">
@@ -72,6 +75,7 @@ export default function header(){
                 clipRule="evenodd"
               />
             </svg>
+
           </Link>
         </div>
       </header>
