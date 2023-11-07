@@ -16,7 +16,7 @@ async function registerUser(event){
   });
   alert('Registration successful, Now you can log in')
 }catch(e){
-  alert('Refistration Failed, please try again later')
+  alert('Registration Failed, please try again later')
 }
 }
   return (

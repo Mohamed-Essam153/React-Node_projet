@@ -1,8 +1,11 @@
+import PlacesPage from "./PlacesPage";
 
 
 export default function IndexPage() {
 
   return(
-    "012"
+    <div>
+      <PlacesPage></PlacesPage>
+    </div>
   );
 }

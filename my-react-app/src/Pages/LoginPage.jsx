@@ -14,7 +14,7 @@ export default function LoginPage() {
       const {data}= await axios.post('/login', { email, password });
       setUser(data);
       alert('Login Successful');
-
+      
       setRedirect(true);
     } catch (e) {
       alert('Login Failed');
@@ -24,10 +24,6 @@ export default function LoginPage() {
   if (redirect) {
     return <Navigate to={"/"} />
   }
-
-
-
-
 
 
   return (
