@@ -14,6 +14,24 @@ const placeSchema = new mongoose.Schema({
   price: Number,
 });
 
+const imageURL = (doc) => {
+  if (doc.photos) {
+    const photos = [];
+    doc.photos.forEach((image) => {
+      const imageUrl = `${process.env.BASE_URL}/${image}`;
+      photos.push(imageUrl);
+    });
+    doc.photos = photos;
+  }
+};
+
+placeSchema.post("init", (doc) => {
+  imageURL(doc);
+});
+placeSchema.post("save", (doc) => {
+  imageURL(doc);
+});
+
 const PlaceModel = mongoose.model('Place', placeSchema);
 
 module.exports = PlaceModel;
